@@ -47,7 +47,7 @@ public class BankServiceImpl implements BankService {
 				throw new Custom204Exception("No Data found for the User Name :" + userName);
 			}
 		} catch (RestClientException e) {
-			throw new Custom204Exception("No Data found for the User Name :" + userName);
+			throw new Custom204Exception("Service Error");
 		}
 		return user;
 	}
@@ -73,7 +73,7 @@ public class BankServiceImpl implements BankService {
 				throw new Custom204Exception("No Data found");
 			}
 		} catch (RestClientException e) {
-			throw new Custom204Exception("No Data found");
+			throw new Custom204Exception("Service Error");
 		}
 		return userList;
 	}
