@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kannan.sample.bank.service.BankService;
+import com.kannan.sample.bank.util.Custom204Exception;
+import com.kannan.sample.bank.util.CustomResponseEntity;
 import com.kannan.sample.bank.vo.User;
-import com.kannan.sample.util.Custom204Exception;
-import com.kannan.sample.util.CustomResponseEntity;
 
 @RestController
 @RequestMapping("/api")
@@ -27,27 +27,24 @@ public class BankController {
 	public ResponseEntity<?> accountsInfo() throws Custom204Exception {
 		List<User> userList = bankService.findAllUsers();
 		if (userList.isEmpty()) {
-			throw new Custom204Exception("No user found");
+			throw new Custom204Exception("User Detetails not found");
 		}
-		CustomResponseEntity response = new CustomResponseEntity(HttpStatus.OK);
-		response.setMessage("Success");
-		response.setData(userList);
-		return buildResponseEntity(response);
+		return buildResponse(userList);
 	}
 
 	@RequestMapping(value = "/accountinfo/{name}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> accountsInfo(@PathVariable("name") String name) throws Custom204Exception {
 		User user = bankService.findUserByName(name);
 		if (user == null) {
-			throw new Custom204Exception("No user found");
+			throw new Custom204Exception("User details not found for user name :" + name);
 		}
-		CustomResponseEntity response = new CustomResponseEntity(HttpStatus.OK);
-		response.setMessage("Success");
-		response.setData(user);
-		return buildResponseEntity(response);
+		return buildResponse(user);
 	}
 
-	private ResponseEntity<Object> buildResponseEntity(CustomResponseEntity response) {
+	private ResponseEntity<?> buildResponse(Object userInfo) {
+		CustomResponseEntity response = new CustomResponseEntity(HttpStatus.OK);
+		response.setMessage("Success");
+		response.setData(userInfo);
 		return new ResponseEntity<>(response, response.getStatus());
 	}
 }

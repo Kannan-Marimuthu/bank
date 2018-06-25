@@ -2,9 +2,9 @@ package com.kannan.sample.bank.service;
 
 import java.util.List;
 
+import com.kannan.sample.bank.util.Custom204Exception;
 import com.kannan.sample.bank.vo.Account;
 import com.kannan.sample.bank.vo.User;
-import com.kannan.sample.util.Custom204Exception;
 
 public interface BankService {
 
