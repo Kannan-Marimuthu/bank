@@ -8,7 +8,4 @@ http://localhost:1236/api/accountinfo
 http://localhost:1236/api/accountinfo/Kannan
 
 
-
-User Service : https://github.com/Kannan-Marimuthu/bank-user
-
-Account Service : https://github.com/Kannan-Marimuthu/bank-account
+[Ref Wiki For Details](https://github.com/Kannan-Marimuthu/bank/wiki)
