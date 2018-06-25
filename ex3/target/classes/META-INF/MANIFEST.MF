@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: ex3
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Kannan M
+Implementation-Vendor-Id: com.kannan.sample
+Build-Jdk: 1.8.0_171
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/ex3
+Created-By: Maven Integration for Eclipse
+
