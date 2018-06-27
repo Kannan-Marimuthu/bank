@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 public class BankControllerTest {
 
 	private static String successResponse = "{\"status\":\"OK\",\"message\":\"Success\",\"data\":{\"id\":1,\"userName\":\"Kannan\",\"status\":\"Active\",\"accountDetails\":[{\"id\":1,\"accountNumber\":1001,\"userName\":\"Kannan\",\"type\":\"S\",\"balance\":15000},{\"id\":4,\"accountNumber\":1002,\"userName\":\"Kannan\",\"type\":\"C\",\"balance\":1200}]}}";
-	private static String failureResponse = "{\"status\":\"NO_CONTENT\",\"message\":\"No Data found for the User Name :Kannan1\",\"data\":null}";
+	private static String failureResponse = "{\"status\":\"NO_CONTENT\",\"message\":\"Service Error\",\"data\":null}";
 	@Autowired
 	private MockMvc mockMvc;
 
